@@ -10,6 +10,7 @@ MainWindow::MainWindow(QWidget *parent)
     , ui(new Ui::MainWindow)
 {
     ui->setupUi(this);
+
     calc.reset();
 }
 
@@ -22,6 +23,7 @@ MainWindow::~MainWindow()
 void MainWindow::on_btn_0_clicked()
 {
     calc.digit(0);
+
     ui->screen->setText(calc.lcd());
 }
 
@@ -111,6 +113,7 @@ void MainWindow::on_btn_eq_clicked()
 {
     calc.calculate();
     ui->screen->setText(calc.lcd());
+
 }
 
 
