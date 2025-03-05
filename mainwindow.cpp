@@ -107,9 +107,16 @@ void MainWindow::on_btn_sub_clicked()
 }
 
 
-void MainWindow::on_pushButton_15_clicked()
+void MainWindow::on_btn_eq_clicked()
 {
     calc.calculate();
+    ui->screen->setText(calc.lcd());
+}
+
+
+void MainWindow::on_btn_sing_clicked()
+{
+    calc.changeSign();
     ui->screen->setText(calc.lcd());
 }
 

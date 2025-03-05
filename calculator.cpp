@@ -16,6 +16,7 @@ int Calculator::digit(int d)
 {
     if(oper == 0){
         val1 = val1 * 10 + d;
+
         result = val1;
     } else {
         val2 = val2 * 10 + d;
@@ -46,7 +47,20 @@ int Calculator::calculate()
         result = val1 / val2;
         break;
     default:
+        result  = 0;
         break;
+    }
+    return 0;
+}
+
+int Calculator::changeSign()
+{
+    if (oper == 0) {
+        val1 = -val1;
+        result = val1;
+    } else {
+        val2 = -val2;
+        result = val2;
     }
     return 0;
 }

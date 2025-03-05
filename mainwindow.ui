@@ -88,7 +88,7 @@
       </widget>
      </item>
      <item row="4" column="2">
-      <widget class="QPushButton" name="pushButton_15">
+      <widget class="QPushButton" name="btn_eq">
        <property name="text">
         <string>=</string>
        </property>
@@ -133,6 +133,13 @@
       <widget class="QPushButton" name="btn_9">
        <property name="text">
         <string>9</string>
+       </property>
+      </widget>
+     </item>
+     <item row="5" column="0">
+      <widget class="QPushButton" name="btn_sing">
+       <property name="text">
+        <string>+/-</string>
        </property>
       </widget>
      </item>

@@ -39,7 +39,9 @@ private slots:
 
     void on_btn_sub_clicked();
 
-    void on_pushButton_15_clicked();
+    void on_btn_eq_clicked();
+
+    void on_btn_sing_clicked();
 
 private:
     Ui::MainWindow *ui;

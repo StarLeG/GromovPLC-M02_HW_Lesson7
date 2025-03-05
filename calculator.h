@@ -11,6 +11,7 @@ public:
     int digit(int d);
     int operation(int o);
     int calculate();
+    int changeSign();
     QString lcd();
 
 private:
