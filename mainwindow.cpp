@@ -123,3 +123,10 @@ void MainWindow::on_btn_sing_clicked()
     ui->screen->setText(calc.lcd());
 }
 
+
+void MainWindow::on_btn_decimal_clicked()
+{
+    calc.setDecimal();
+    ui->screen->setText(calc.lcd());
+}
+

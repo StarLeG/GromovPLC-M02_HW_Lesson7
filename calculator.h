@@ -2,6 +2,7 @@
 #define CALCULATOR_H
 
 #include <QString>
+#include <cmath>
 
 class Calculator
 {
@@ -12,6 +13,7 @@ public:
     int operation(int o);
     int calculate();
     int changeSign();
+    void setDecimal();
     QString lcd();
 
 private:
@@ -19,6 +21,9 @@ private:
     double val2;
     double result;
     int oper;
+    bool isDecimal;
+    int decimalPlaces;
+
 };
 
 #endif // CALCULATOR_H

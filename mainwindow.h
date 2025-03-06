@@ -43,6 +43,8 @@ private slots:
 
     void on_btn_sing_clicked();
 
+    void on_btn_decimal_clicked();
+
 private:
     Ui::MainWindow *ui;
 
