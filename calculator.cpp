@@ -181,4 +181,18 @@ void Calculator::updateDisplayString()
     }
 }
 
+int Calculator::percentage()
+{
+    if (oper == Operation::None) {
+        val1 = val1 / 100;
+        result = val1;
+    } else {
+        val2 = val1 * val2 / 100;
+        result = val2;
+    }
+
+    updateDisplayString();
+    return 0;
+}
+
 

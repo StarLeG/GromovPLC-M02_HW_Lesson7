@@ -47,6 +47,8 @@ private slots:
 
     void on_btn_backSpace_clicked();
 
+    void on_btn_percentage_clicked();
+
 private:
     Ui::MainWindow *ui;
 

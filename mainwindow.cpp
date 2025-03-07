@@ -136,3 +136,10 @@ void MainWindow::on_btn_backSpace_clicked()
     ui->scr->setText(calc.getDisplayString());
 }
 
+
+void MainWindow::on_btn_percentage_clicked()
+{
+    calc.percentage();
+    ui->scr->setText(calc.getDisplayString());
+}
+

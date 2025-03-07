@@ -27,6 +27,7 @@ public:
     void backspace();
     QString getDisplayString();
     void updateDisplayString();
+    int percentage();
 
 private:
     double val1;
