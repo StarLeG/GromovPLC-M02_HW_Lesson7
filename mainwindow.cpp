@@ -143,3 +143,21 @@ void MainWindow::on_btn_percentage_clicked()
     ui->scr->setText(calc.getDisplayString());
 }
 
+
+void MainWindow::on_btn_mem_clicked()
+{
+    calc.memory();
+}
+
+void MainWindow::on_btn_memRecall_clicked()
+{
+    calc.memoryRecall();
+    ui->scr->setText(calc.getDisplayString());
+}
+
+
+void MainWindow::on_btn_memClr_clicked()
+{
+    calc.memoryClear();
+}
+

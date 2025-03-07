@@ -49,6 +49,12 @@ private slots:
 
     void on_btn_percentage_clicked();
 
+    void on_btn_mem_clicked();
+
+    void on_btn_memRecall_clicked();
+
+    void on_btn_memClr_clicked();
+
 private:
     Ui::MainWindow *ui;
 

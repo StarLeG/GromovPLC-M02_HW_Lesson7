@@ -28,6 +28,9 @@ public:
     QString getDisplayString();
     void updateDisplayString();
     int percentage();
+    void memory();
+    void memoryRecall();
+    void memoryClear();
 
 private:
     double val1;
@@ -39,6 +42,7 @@ private:
     int decimalPlaces;
     bool isCalculated;
     QString displayString;
+    double mem;
 
 };
 

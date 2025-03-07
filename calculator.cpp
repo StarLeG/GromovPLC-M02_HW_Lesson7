@@ -3,7 +3,7 @@
 Calculator::Calculator()
     : val1(0.), val2(0.), result(0.), oper(Operation::None),
     lastOper(Operation::None), isDecimal(false), decimalPlaces(0),
-    isCalculated(false), displayString("0") {}
+    isCalculated(false), displayString("0"), mem(0.) {}
 
 int Calculator::reset()
 {
@@ -196,3 +196,21 @@ int Calculator::percentage()
 }
 
 
+void Calculator::memory()
+{
+    mem = result;
+    qDebug() << "Memory1 = " << mem;
+}
+
+
+
+void Calculator::memoryRecall()
+{
+    val2 = mem;
+    updateDisplayString();
+}
+
+void Calculator::memoryClear()
+{
+    mem = 0.;
+}
