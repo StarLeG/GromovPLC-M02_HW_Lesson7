@@ -22,69 +22,68 @@ MainWindow::~MainWindow()
 
 void MainWindow::on_btn_0_clicked()
 {
-    calc.digit(0);
-
-    ui->screen->setText(calc.lcd());
+    calc.digit(0);    
+    ui->scr->setText(calc.lcd());
 }
 
 void MainWindow::on_btn_1_clicked()
 {
-    calc.digit(1);
-    ui->screen->setText(calc.lcd());
+    calc.digit(1);    
+    ui->scr->setText(calc.lcd());
 }
 
 void MainWindow::on_btn_2_clicked()
 {
-    calc.digit(2);
-    ui->screen->setText(calc.lcd());
+    calc.digit(2);    
+    ui->scr->setText(calc.lcd());
 }
 
 void MainWindow::on_btn_3_clicked()
 {
-    calc.digit(3);
-    ui->screen->setText(calc.lcd());
+    calc.digit(3);    
+    ui->scr->setText(calc.lcd());
 }
 
 void MainWindow::on_btn_4_clicked()
 {
-    calc.digit(4);
-    ui->screen->setText(calc.lcd());
+    calc.digit(4);    
+    ui->scr->setText(calc.lcd());
 }
 
 void MainWindow::on_btn_5_clicked()
 {
-    calc.digit(5);
-    ui->screen->setText(calc.lcd());
+    calc.digit(5);    
+    ui->scr->setText(calc.lcd());
 }
 
 void MainWindow::on_btn_6_clicked()
 {
-    calc.digit(6);
-    ui->screen->setText(calc.lcd());
+    calc.digit(6);    
+    ui->scr->setText(calc.lcd());
 }
 
 void MainWindow::on_btn_7_clicked()
 {
-    calc.digit(7);
-    ui->screen->setText(calc.lcd());
+    calc.digit(7);    
+    ui->scr->setText(calc.lcd());
 }
 
 void MainWindow::on_btn_8_clicked()
 {
-    calc.digit(8);
-    ui->screen->setText(calc.lcd());
+    calc.digit(8);   
+    ui->scr->setText(calc.lcd());
 }
 
 void MainWindow::on_btn_9_clicked()
 {
     calc.digit(9);
-    ui->screen->setText(calc.lcd());
+    ui->scr->setText(calc.lcd());
 }
 
 void MainWindow::on_btn_rst_clicked()
 {
     calc.reset();
-    ui->screen->setText(calc.lcd());
+    ui->scr->setText(calc.lcd());
 }
 
 void MainWindow::on_btn_div_clicked()
@@ -111,22 +110,22 @@ void MainWindow::on_btn_sub_clicked()
 
 void MainWindow::on_btn_eq_clicked()
 {
-    calc.calculate();
-    ui->screen->setText(calc.lcd());
+    calc.calculate();    
+    ui->scr->setText(calc.lcd());
 
 }
 
 
 void MainWindow::on_btn_sing_clicked()
 {
-    calc.changeSign();
-    ui->screen->setText(calc.lcd());
+    calc.changeSign();   
+    ui->scr->setText(calc.lcd());
 }
 
 
 void MainWindow::on_btn_decimal_clicked()
 {
-    calc.setDecimal();
-    ui->screen->setText(calc.lcd());
+    calc.setDecimal();    
+    ui->scr->setText(calc.lcd());
 }
 
