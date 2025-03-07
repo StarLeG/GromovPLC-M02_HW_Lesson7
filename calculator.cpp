@@ -20,6 +20,10 @@ int Calculator::reset()
 
 int Calculator::digit(int d)
 {
+    if (isCalculated) {
+        reset();
+    }
+
     if (!isDecimal) {
         if (oper == Operation::None) {
             val1 = val1 * 10 + d;
@@ -90,6 +94,7 @@ int Calculator::calculate()
 
 
     val1 = result;
+    //val2 = 0.;
     isCalculated = true;
 
     if (isCalculated) {
@@ -136,13 +141,11 @@ void Calculator::backspace()
             val2 = currentValue.toDouble();
             result = val2;
         }
+
+        updateDisplayString();
     }
 }
 
-QString Calculator::lcd()
-{
-    return QString::number(result, 'g', 10);
-}
 
 QString Calculator::getDisplayString()
 {

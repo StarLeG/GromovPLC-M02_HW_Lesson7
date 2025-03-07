@@ -25,7 +25,6 @@ public:
     int changeSign();
     void setDecimal();
     void backspace();
-    QString lcd();
     QString getDisplayString();
     void updateDisplayString();
 
