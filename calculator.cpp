@@ -115,6 +115,8 @@ int Calculator::changeSign()
         val2 = -val2;
         result = val2;
     }
+
+    updateDisplayString();
     return 0;
 }
 
