@@ -26,6 +26,8 @@ public:
     void setDecimal();
     void backspace();
     QString lcd();
+    QString getDisplayString();
+    void updateDisplayString();
 
 private:
     double val1;
@@ -36,6 +38,7 @@ private:
     bool isDecimal;
     int decimalPlaces;
     bool isCalculated;
+    QString displayString;
 
 };
 

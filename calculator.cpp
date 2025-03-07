@@ -3,7 +3,7 @@
 Calculator::Calculator()
     : val1(0.), val2(0.), result(0.), oper(Operation::None),
     lastOper(Operation::None), isDecimal(false), decimalPlaces(0),
-    isCalculated(false) {}
+    isCalculated(false), displayString("0") {}
 
 int Calculator::reset()
 {
@@ -13,6 +13,7 @@ int Calculator::reset()
     lastOper = Operation::None;
     result = 0.;
     isCalculated = false;
+    displayString = "0";
 
     return 0;
 }
@@ -38,6 +39,7 @@ int Calculator::digit(int d)
     }
 
     isCalculated = false;
+    updateDisplayString();
 
     return 0;
 }
@@ -54,6 +56,7 @@ int Calculator::operation(Operation o)
     isDecimal = false;
     decimalPlaces = 0;
     isCalculated = false;
+    updateDisplayString();
     return 0;
 }
 
@@ -88,11 +91,12 @@ int Calculator::calculate()
 
     val1 = result;
     isCalculated = true;
-    qDebug() << "Val1 = " << val1;
-    qDebug() << "Val2 = " << val2;
-    qDebug() << "Result = " << result;
-    qDebug() << "Oper = " << oper;
-    qDebug() << "LastOper = " << lastOper;
+
+    if (isCalculated) {
+        displayString = QString::number(result, 'g', 10);
+    } else {
+        updateDisplayString();
+    }
 
     return 0;
 }
@@ -138,6 +142,38 @@ void Calculator::backspace()
 QString Calculator::lcd()
 {
     return QString::number(result, 'g', 10);
+}
+
+QString Calculator::getDisplayString()
+{
+    return displayString;
+}
+
+void Calculator::updateDisplayString()
+{
+    if (oper == Operation::None) {
+        displayString = QString::number(val1, 'g', 10);
+    } else {
+        QString operationSymbol;
+        switch (oper) {
+        case Operation::Add:
+            operationSymbol = "+";
+            break;
+        case Operation::Subtract:
+            operationSymbol = "-";
+            break;
+        case Operation::Multiply:
+            operationSymbol = "*";
+            break;
+        case Operation::Divide:
+            operationSymbol = "/";
+            break;
+        default:
+            operationSymbol = "";
+            break;
+        }
+        displayString = QString::number(val1, 'g', 10) + " " + operationSymbol + " " + QString::number(val2, 'g', 10);
+    }
 }
 
 
