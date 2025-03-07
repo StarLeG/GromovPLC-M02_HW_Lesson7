@@ -45,6 +45,8 @@ private slots:
 
     void on_btn_decimal_clicked();
 
+    void on_btn_backSpace_clicked();
+
 private:
     Ui::MainWindow *ui;
 

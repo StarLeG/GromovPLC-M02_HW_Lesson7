@@ -129,3 +129,10 @@ void MainWindow::on_btn_decimal_clicked()
     ui->scr->setText(calc.lcd());
 }
 
+
+void MainWindow::on_btn_backSpace_clicked()
+{
+    calc.backspace();
+    ui->scr->setText(calc.lcd());
+}
+

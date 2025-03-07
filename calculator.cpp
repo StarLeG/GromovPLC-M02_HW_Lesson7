@@ -87,11 +87,12 @@ int Calculator::calculate()
 
 
     val1 = result;
-   // val2 = 0.;
     isCalculated = true;
     qDebug() << "Val1 = " << val1;
     qDebug() << "Val2 = " << val2;
     qDebug() << "Result = " << result;
+    qDebug() << "Oper = " << oper;
+    qDebug() << "LastOper = " << lastOper;
 
     return 0;
 }
@@ -112,6 +113,26 @@ void Calculator::setDecimal()
 {
     isDecimal = true;
     decimalPlaces = 0;
+}
+
+void Calculator::backspace()
+{
+    QString currentValue = QString::number(result, 'g', 10);
+
+    if (currentValue.length() > 0) {
+        currentValue.chop(1);
+        if (currentValue.isEmpty()) {
+            currentValue = "0";
+        }
+
+        if (oper == Operation::None) {
+            val1 = currentValue.toDouble();
+            result = val1;
+        } else {
+            val2 = currentValue.toDouble();
+            result = val2;
+        }
+    }
 }
 
 QString Calculator::lcd()

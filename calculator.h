@@ -24,6 +24,7 @@ public:
     int calculate();
     int changeSign();
     void setDecimal();
+    void backspace();
     QString lcd();
 
 private:
