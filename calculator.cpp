@@ -6,7 +6,7 @@ int Calculator::reset()
 {
     val1 = 0.;
     val2 = 0.;
-    oper = 0;
+    oper = Operation::None;
     result = 0.;
 
     return 0;
@@ -15,7 +15,7 @@ int Calculator::reset()
 int Calculator::digit(int d)
 {
     if (!isDecimal) {
-        if (oper == 0) {
+        if (oper == Operation::None) {
             val1 = val1 * 10 + d;
             result = val1;
         } else {
@@ -23,7 +23,7 @@ int Calculator::digit(int d)
             result = val2;
         }
     } else {
-        if (oper == 0) {
+        if (oper == Operation::None) {
             val1 = val1 + d / pow(10, ++decimalPlaces);
             result = val1;
         } else {
@@ -34,7 +34,7 @@ int Calculator::digit(int d)
     return 0;
 }
 
-int Calculator::operation(int o)
+int Calculator::operation(Operation o)
 {
     oper = o;
     isDecimal = false;
@@ -45,20 +45,20 @@ int Calculator::operation(int o)
 int Calculator::calculate()
 {
     switch (oper) {
-    case 1:
+    case Operation::Add:
         result = val1 + val2;
         break;
-    case 2:
+    case Operation::Subtract:
         result = val1 - val2;
         break;
-    case 3:
+    case Operation::Multiply:
         result = val1 * val2;
         break;
-    case 4:
+    case Operation::Divide:
         if (val2 != 0) {
             result = val1 / val2;
         } else {
-            result = 0; // Обработка деления на ноль
+            result = 0;
         }
         break;
     default:
@@ -70,7 +70,7 @@ int Calculator::calculate()
 
 int Calculator::changeSign()
 {
-    if (oper == 0) {
+    if (oper == Operation::None) {
         val1 = -val1;
         result = val1;
     } else {
@@ -88,7 +88,7 @@ void Calculator::setDecimal()
 
 QString Calculator::lcd()
 {
-    return QString::number(result, 'f', decimalPlaces);
+    return QString::number(result, 'g', 10);
 }
 
 

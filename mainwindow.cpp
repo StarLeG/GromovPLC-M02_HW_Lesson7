@@ -89,23 +89,23 @@ void MainWindow::on_btn_rst_clicked()
 
 void MainWindow::on_btn_div_clicked()
 {
-    calc.operation(4);
+    calc.operation(Calculator::Operation::Divide);
 }
 
 void MainWindow::on_btn_mul_clicked()
 {
-    calc.operation(3);
+    calc.operation(Calculator::Operation::Multiply);
 }
 
 void MainWindow::on_btn_add_clicked()
 {
-    calc.operation(1);
+    calc.operation(Calculator::Operation::Add);
 }
 
 
 void MainWindow::on_btn_sub_clicked()
 {
-    calc.operation(2);
+    calc.operation(Calculator::Operation::Subtract);
 }
 
 

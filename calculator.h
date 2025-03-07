@@ -7,10 +7,19 @@
 class Calculator
 {
 public:
+
+    enum Operation {
+        None,  // Нет операции
+        Add ,   // Сложение
+        Subtract,  // Вычитание
+        Multiply,  // Умножение
+        Divide     // Деление
+    };
+
     Calculator();
     int reset();
     int digit(int d);
-    int operation(int o);
+    int operation(Operation o);
     int calculate();
     int changeSign();
     void setDecimal();
@@ -20,7 +29,7 @@ private:
     double val1;
     double val2;
     double result;
-    int oper;
+    Operation oper;
     bool isDecimal;
     int decimalPlaces;
 
