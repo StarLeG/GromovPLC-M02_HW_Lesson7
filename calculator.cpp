@@ -1,13 +1,18 @@
 #include "calculator.h"
 
-Calculator::Calculator() {}
+Calculator::Calculator()
+    : val1(0.), val2(0.), result(0.), oper(Operation::None),
+    lastOper(Operation::None), isDecimal(false), decimalPlaces(0),
+    isCalculated(false) {}
 
 int Calculator::reset()
 {
     val1 = 0.;
     val2 = 0.;
     oper = Operation::None;
+    lastOper = Operation::None;
     result = 0.;
+    isCalculated = false;
 
     return 0;
 }
@@ -31,19 +36,33 @@ int Calculator::digit(int d)
             result = val2;
         }
     }
+
+    isCalculated = false;
+
     return 0;
 }
 
 int Calculator::operation(Operation o)
 {
+    if (isCalculated) {
+        val1 = result;
+        val2 = 0.;
+    }
+
     oper = o;
+    lastOper = o;
     isDecimal = false;
     decimalPlaces = 0;
+    isCalculated = false;
     return 0;
 }
 
 int Calculator::calculate()
 {
+    if (oper == Operation::None && lastOper != Operation::None) {
+        oper = lastOper;
+    }
+
     switch (oper) {
     case Operation::Add:
         result = val1 + val2;
@@ -65,6 +84,15 @@ int Calculator::calculate()
         result  = 0;
         break;
     }
+
+
+    val1 = result;
+   // val2 = 0.;
+    isCalculated = true;
+    qDebug() << "Val1 = " << val1;
+    qDebug() << "Val2 = " << val2;
+    qDebug() << "Result = " << result;
+
     return 0;
 }
 

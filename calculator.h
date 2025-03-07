@@ -3,17 +3,18 @@
 
 #include <QString>
 #include <cmath>
+#include <QDebug>
 
 class Calculator
 {
 public:
 
     enum Operation {
-        None,  // Нет операции
-        Add ,   // Сложение
-        Subtract,  // Вычитание
-        Multiply,  // Умножение
-        Divide     // Деление
+        None,
+        Add ,
+        Subtract,
+        Multiply,
+        Divide
     };
 
     Calculator();
@@ -30,8 +31,10 @@ private:
     double val2;
     double result;
     Operation oper;
+    Operation lastOper;
     bool isDecimal;
     int decimalPlaces;
+    bool isCalculated;
 
 };
 
